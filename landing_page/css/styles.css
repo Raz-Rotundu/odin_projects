@@ -2,8 +2,11 @@
 
 body {
     /* Should flex-column arrange the divs */
+    display: flex;
+    flex-direction: column;
 }
 
+/* Styles for the header */
 header {
     /* background #1F2937 */
     /* Flex display as row */
@@ -40,4 +43,57 @@ a, .link_list {
     color: #E5E7EB;
     text-decoration: none;
 
+}
+
+/* Styles for the hero div (div0) */
+
+.div-0 {
+    display: flex;
+    flex-direction: row;
+
+    /* Same background as header */
+    background: #1F2937;
+    justify-content: center;
+    align-items: center;
+
+    /* fonts must be white */
+    color: #e5e7eb;
+
+}
+
+.text-pic {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 48px;
+
+}
+
+.text {
+}
+
+.heromain {
+    font-size: 48px;
+    font-weight: bolder;
+    color: #f9faf8;
+}
+
+.herosecond {
+    font-size: 18px;
+    color: #e5e7eb;
+
+}
+
+.pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* The button */
+button {
+    color: #f9faf8;
+    background-color: #3882f6;
+    border-radius: 4px;
 }
