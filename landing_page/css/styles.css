@@ -50,6 +50,7 @@ a, .link_list {
 .div-0 {
     display: flex;
     flex-direction: row;
+    padding: 50px;
 
     /* Same background as header */
     background: #1F2937;
@@ -65,11 +66,16 @@ a, .link_list {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap: 48px;
+    gap: 400px;
+    margin-right: 300px;
+    margin-left: 300px;
 
 }
 
 .text {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
 .heromain {
@@ -81,6 +87,7 @@ a, .link_list {
 .herosecond {
     font-size: 18px;
     color: #e5e7eb;
+    padding-right: 320px;
 
 }
 
@@ -96,4 +103,5 @@ button {
     color: #f9faf8;
     background-color: #3882f6;
     border-radius: 4px;
+    margin-right: 90%;
 }
