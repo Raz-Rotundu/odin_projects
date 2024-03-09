@@ -1,107 +1,18 @@
-/* Landing page stylesheet */
-
+/* Overall Body */
 body {
-    /* Should flex-column arrange the divs */
-    display: flex;
-    flex-direction: column;
+    /* All text needs the roboto font */
+    font-family: 'Roboto', sans-serif';
 }
 
-/* Styles for the header */
-header {
-    /* background #1F2937 */
-    /* Flex display as row */
-    background: #1F2937;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+/* Header styles */
+.header {
 
 }
 
-.header_logo {
-    /* Logo text is 24px */
-    /* Logo color is #F9FAF8 */
-    font-size: 24px;
-    color: #F9FAF8;
-    
-}
-
-ul {
-    display: flex;
-
-    /* No dots */
-    list-style-type: none;
-
-    padding-left: 0;
-    gap: 20px;
-}
-
-a, .link_list {
-    /* List items have list-style-type set to none */
-    /* text is 18px and #E5E7EB */
-
-    font-size: 18px;
-    color: #E5E7EB;
-    text-decoration: none;
+.header_logo{
 
 }
 
-/* Styles for the hero div (div0) */
+.header_links{
 
-.div-0 {
-    display: flex;
-    flex-direction: row;
-    padding: 50px;
-
-    /* Same background as header */
-    background: #1F2937;
-    justify-content: center;
-    align-items: center;
-
-    /* fonts must be white */
-    color: #e5e7eb;
-
-}
-
-.text-pic {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 400px;
-    margin-right: 300px;
-    margin-left: 300px;
-
-}
-
-.text {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.heromain {
-    font-size: 48px;
-    font-weight: bolder;
-    color: #f9faf8;
-}
-
-.herosecond {
-    font-size: 18px;
-    color: #e5e7eb;
-    padding-right: 320px;
-
-}
-
-.pic {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-/* The button */
-button {
-    color: #f9faf8;
-    background-color: #3882f6;
-    border-radius: 4px;
-    margin-right: 90%;
 }

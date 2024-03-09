@@ -1,0 +1,165 @@
+/* Landing page stylesheet */
+
+body {
+    /* Should flex-column arrange the divs */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* Styles for the header */
+header {
+    /* background #1F2937 */
+    /* Flex display as row */
+    background: #1F2937;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.header_logo {
+    /* Logo text is 24px */
+    /* Logo color is #F9FAF8 */
+    font-size: 24px;
+    color: #F9FAF8;
+
+}
+
+ul {
+    display: flex;
+
+    /* No dots */
+    list-style-type: none;
+
+    padding-left: 0;
+    gap: 20px;
+}
+
+a,
+.link_list {
+    /* List items have list-style-type set to none */
+    /* text is 18px and #E5E7EB */
+
+    font-size: 18px;
+    color: #E5E7EB;
+    text-decoration: none;
+
+}
+
+/* Styles for the hero div (div0) */
+
+.div-0 {
+    display: flex;
+    flex-direction: row;
+
+    /* Same background as header */
+    background: #1F2937;
+    justify-content: center;
+    align-items: center;
+
+    /* fonts must be white */
+    color: #e5e7eb;
+
+    /* Padding for all */
+    padding: 100px;
+    padding-left: 120px;
+    padding-right: 120px;
+
+}
+
+.text-pic {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.text {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 40px;
+}
+
+.heromain {
+    font-size: 48px;
+    font-weight: bolder;
+    color: #f9faf8;
+}
+
+.herosecond {
+    font-size: 18px;
+    color: #e5e7eb;
+
+}
+
+.pic {
+    display: flex;
+    flex: 1 1 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-color: gray;
+
+}
+
+/* The button */
+button {
+    /* fonts */
+    font-size: medium;
+    color: #f9faf8;
+    font-weight: bold;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    /* background + shape */
+    background-color: #3882f6;
+    border-radius: 4px;
+
+    /* placement */
+    margin-right: 90%;
+    margin-top: 20px;
+}
+
+/* Styles for the card box div */
+div-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.info_header {
+    text-align: center;
+    font-size: 36px;
+    font-weight: extra-bold;
+    margin: 32px;
+    color: #1F2937;
+
+}
+
+.info_cardbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+
+}
+
+/* The cards that will be listed */
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+
+
+}
+
+/* img should be blue with rounded corners */
+.card_img {
+    flex: 0 0 75%;
+    /* border attributes */
+    border-style: solid;
+    border-width: medium;
+    border-color: #3882f6;
+    border-radius: 25px;
+}
