@@ -1,8 +1,14 @@
 /* Overall Body */
 body {
     /* All text needs the roboto font */
+    font-family: roboto, sans-serif;
 
+    /* Border/Margin/Padding */
     margin: 0px;
+
+    /* Flex Properties */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header styles */
@@ -25,7 +31,8 @@ body {
 
 .header_logo{
     /* Text Color */
-    font-size: 24px;
+    font-size: 32px;
+    font-weight: bolder;
     color: #F9FAF8;
 
 }
@@ -34,6 +41,7 @@ body {
     /* Text Color */
     font-size: 18px;
     color: #E5E7EB;
+
     
     /* Flex container properties */
 }
@@ -44,3 +52,90 @@ li {
     display: flex;
     flex-direction: row;
 }
+
+
+
+/* Hero section styles*/
+.hero {
+    /* Color properties */
+    background-color: #1F2937;
+
+    /* Padding/Margin/Border */
+    padding-left: 12%;
+    padding-right: 12%;
+    
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+
+    /* Flex properties */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+
+    color: white;
+
+}
+
+ .text {
+    /* Color properties */
+    color: #F9FAF8;
+
+    /* Flex Properties */
+    display: flex;
+    flex: 0.5;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    
+
+ }
+
+ .heromain {
+
+    /* Text properties */
+    font-size: 48px;
+    font-weight: bolder;
+
+ }
+ 
+ .herosecond {
+    
+    /* Text properties */
+    font-size: 18px;
+    color: #E5E7EB;
+
+
+ }
+
+ button {
+    /* Margin/Padding/Border */
+    border-radius: 5px;
+    border: 0;
+
+    /* padding-left: 25%; */
+    /* padding-right: 25%; */
+
+    margin-top: 1%;
+    margin-right: 90%;
+
+    /* Coloring */
+    background-color: #3882F6;
+
+    /* Text */
+    color: #E5E7EB;
+    font-weight: bolder;
+
+ }
+
+ .pic {
+    /* Flex properties */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0.5;
+
+    /* Coloring */
+    background-color: #9a9b9e;
+ }
