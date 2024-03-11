@@ -1,18 +1,46 @@
 /* Overall Body */
 body {
     /* All text needs the roboto font */
-    font-family: 'Roboto', sans-serif';
+
+    margin: 0px;
 }
 
 /* Header styles */
 .header {
+    /* Visual */
+    background-color: #1F2937;
+
+    /* margin/border/padding */
+    padding-left: 12%;
+    padding-right: 12%;
+
+    /* Flex container properties */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
 
 }
 
 .header_logo{
+    /* Text Color */
+    font-size: 24px;
+    color: #F9FAF8;
 
 }
 
 .header_links{
+    /* Text Color */
+    font-size: 18px;
+    color: #E5E7EB;
+    
+    /* Flex container properties */
+}
 
+li {
+
+    /* Flex container properties */
+    display: flex;
+    flex-direction: row;
 }
