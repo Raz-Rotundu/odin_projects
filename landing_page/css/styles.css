@@ -139,3 +139,32 @@ li {
     /* Coloring */
     background-color: #9a9b9e;
  }
+
+ /* Info section styles */
+
+ .info {
+    /* Flex properties */
+    display: flex;
+    flex-direction: column;
+
+ }
+
+ .infoheader {
+    /* Border/margin/padding */
+    margin: 60px;
+    /* text properties */
+    text-align: center;
+    font-size: 36px;
+    font-weight: bolder;
+    color: #1F2937;
+    
+
+ }
+
+ .cardstack {
+
+ }
+
+ .card {
+
+ }
