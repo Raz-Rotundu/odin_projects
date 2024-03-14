@@ -162,9 +162,100 @@ li {
  }
 
  .cardstack {
+   /* border/margin/padding */
+   padding-left: 20%;
+   padding-right: 20%;
+   /* flex attributes */
+   display: flex;
+   justify-content: space-between;
 
  }
 
  .card {
+   /* margin/border/padding */
+   /* border: 1px solid #eee;
+   box-shadow: 2px 4px 16px rgba(0,0,0,.06); */
+
+   /* Flex properties */
+   display: flex;
+   flex-direction: column;
+   height: 200px;
+   width: 200px;
+
+
+ }
+
+ .cardimage {
+   /* margin/border/padding */
+   border: 4px solid #77a6f1;
+   border-radius: 12px;
+
+   /* Height/width properties */
+   height: 70%;
+
+   /* text properties */
+   text-align:center;
+   vertical-align: middle;
+   line-height: 70%;
+   
+   /* Color properties */
+   background-color: #dbdbdb;
+
+   /* Flex properties */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+
+ }
+
+ .cardtext {
+   /* margin/border/padding */
+
+   /* text properties */
+   text-align: center;
+   font: light italic #1f2937;
+
+ }
+
+
+
+ /* Styles for the Quote div */
+ .testimonial {
+   /* Border/Margin/Padding */
+   margin-top:60px;
+   /* flex properties */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* Color properties */
+   background-color: #E5E7EB;
+   /* Text properties */
+   font: 36px light italic #1f2937;
+
+
+ }
+
+ .testTex {
+   /* Border/Margin/Padding */
+   /* flex properties */
+   /* Color properties */
+   /* Text properties */
+
+ }
+
+ .paragraph {
+   /* Border/Margin/Padding */
+   /* flex properties */
+   /* Color properties */
+   /* Text properties */
+
+ }
+ 
+ .author {
+   /* Border/Margin/Padding */
+   /* flex properties */
+   /* Color properties */
+   /* Text properties */
 
  }
