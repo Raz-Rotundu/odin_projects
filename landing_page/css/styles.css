@@ -1,7 +1,7 @@
 /* Overall Body */
 body {
     /* All text needs the roboto font */
-    font-family: roboto, sans-serif;
+    font-family: roboto;
 
     /* Border/Margin/Padding */
     margin: 0px;
@@ -231,7 +231,7 @@ li {
    /* Color properties */
    background-color: #E5E7EB;
    /* Text properties */
-   font: 36px light italic #1f2937;
+
 
 
  }
@@ -241,6 +241,10 @@ li {
    /* flex properties */
    /* Color properties */
    /* Text properties */
+   font-size: 36px;
+   color:  #1f2937;
+   padding-left: 25%;
+   padding-right:25%
 
  }
 
@@ -249,6 +253,9 @@ li {
    /* flex properties */
    /* Color properties */
    /* Text properties */
+   font-style: italic;
+
+   
 
  }
  
@@ -257,5 +264,7 @@ li {
    /* flex properties */
    /* Color properties */
    /* Text properties */
+   font-weight: bolder;
+   padding-left: 60%
 
  }
