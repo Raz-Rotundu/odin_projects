@@ -238,13 +238,15 @@ li {
 
  .testTex {
    /* Border/Margin/Padding */
+   padding-left: 25%;
+   padding-right:25%;
+   padding-top: 5%;
    /* flex properties */
    /* Color properties */
    /* Text properties */
    font-size: 36px;
    color:  #1f2937;
-   padding-left: 25%;
-   padding-right:25%
+
 
  }
 
@@ -266,5 +268,57 @@ li {
    /* Text properties */
    font-weight: bolder;
    padding-left: 60%
+
+ }
+
+
+ /* Styles for the signup div */
+
+ .signup {
+    /* Border/Margin/Padding */
+    padding-top: 3%;
+    padding-bottom: 3%;
+    /* flex properties */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Color properties */
+    /* Text properties */
+
+ }
+
+ .bluebox {
+  /* Border/Margin/Padding */
+  padding: 2%;
+  border-radius: 2px;
+  /* flex properties */
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  /* Color properties */
+  background-color: #3882F6;
+  /* Text properties */
+  /* height/width */
+  width: 50%;
+
+ }
+
+ .textbox {
+    /* Border/Margin/Padding */
+   /* flex properties */
+   /* Color properties */
+   /* Text properties */
+
+ }
+
+ .buttonbox{
+    /* Border/Margin/Padding */
+    /* flex properties */
+    /* Color properties */
+    /* Text properties */
+
+ }
+
+ .buttonbox, button{
 
  }
