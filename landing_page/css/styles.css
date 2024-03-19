@@ -337,12 +337,32 @@ li {
 
  .buttonbox button{
    /* Border/Margin/Padding */
-   border: 5px;
-   border-radius: 4px;
-   border-color: #E5E7EB;
+   border: 3px solid #F9FAF8;
+   border-radius: 8px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+
    /* flex properties */
    /* Color properties */
+   color: #F9FAF8;
    /* Text properties */
-   background-color: red;
+   background-color: #3882F6;
+   font-weight: bolder;
+   /* Height/width */
+   width: 300%;
+
+ }
+
+
+ /* The footer */
+
+ footer {
+    /* Border/Margin/Padding */
+    /* flex properties */
+    display: flex;
+    /* Color properties */
+    background-color: #1F2937;
+    /* Text properties */
+    color: #E5E7EB;
 
  }
