@@ -360,6 +360,8 @@ li {
     /* Border/Margin/Padding */
     /* flex properties */
     display: flex;
+    justify-content: center;
+    align-items: center;
     /* Color properties */
     background-color: #1F2937;
     /* Text properties */
