@@ -89,7 +89,7 @@ li {
     display: flex;
     flex: 0.5;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     gap: 10px;
     
 
@@ -130,6 +130,10 @@ li {
     color: #E5E7EB;
     font-weight: bolder;
 
+    /* sizing */
+    min-width: 70.9833px;
+    min-height: 18.9833px;
+
  }
 
  .pic {
@@ -149,12 +153,14 @@ li {
     /* Flex properties */
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    /* height/width properties */
+    height: 500px;
 
  }
 
  .infoheader {
     /* Border/margin/padding */
-    margin: 60px;
     /* text properties */
     text-align: center;
     font-size: 36px;
@@ -166,11 +172,9 @@ li {
 
  .cardstack {
    /* border/margin/padding */
-   padding-left: 20%;
-   padding-right: 20%;
    /* flex attributes */
    display: flex;
-   justify-content: space-between;
+   justify-content: space-around;
 
  }
 
@@ -182,7 +186,7 @@ li {
    /* Flex properties */
    display: flex;
    flex-direction: column;
-   height: 200px;
+   height: 300px;
    width: 200px;
 
 
@@ -330,15 +334,7 @@ li {
 
  }
 
- .buttonbox{
-    /* Border/Margin/Padding */
-    /* flex properties */
-    /* Color properties */
-    /* Text properties */
-
- }
-
- .buttonbox button{
+ .bluebox button{
    /* Border/Margin/Padding */
    border: 3px solid #F9FAF8;
    border-radius: 8px;
@@ -346,14 +342,20 @@ li {
    padding-bottom: 10px;
 
    /* flex properties */
+   flex: 0.5;
    /* Color properties */
    color: #F9FAF8;
    /* Text properties */
    background-color: #3882F6;
    font-weight: bolder;
    /* Height/width */
-   width: 300%;
+    min-width: 70.9833px;
+    min-height: 18.9833px;
+ }
 
+ /* All buttons on hover */
+ button:hover {
+  background-color: #77a6f1;
  }
 
 
@@ -371,3 +373,5 @@ li {
     color: #E5E7EB;
 
  }
+
+
