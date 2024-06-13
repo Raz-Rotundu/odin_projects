@@ -41,29 +41,29 @@ function getPlayerMove(){
 
 }
 
-function main(){
-    let playerScore = 0;
-    let aiScore = 0;
+// Add eventListeners to the buttons 
+function addListeners(){
+    const l = document.querySelectorAll('div.wrapper');
+    l.forEach((div) => console.log(div))
+    // let buttonNodeList = document.querySelectorAll(".moveButton ");
+    // let buttonList = Array.from(buttonNodeList);
+    // console.log(buttonList.length);
 
-    // Play 5 rounds
-    for(let i = 0; i < 5; i++){
-        let playerMove = getPlayerMove();
-        let aiMove = getAiMove();
-        winner = getWinner(playerMove, aiMove);
-        if(winner == 1){
-            playerScore ++;
-            alert("Player has won")
-        }
-        else{
-            aiScore ++;
-            alert("Ai has won")
-        }
-    }
-    if(playerScore > aiScore){
-        alert("Player wins the game")
-    }
-    else{
-        alert("Ai wins the game")
-    }
+    // // Add a listener to each button
+    // for(let i = 0; i < buttonList.length; i++){
+    //     let button = buttonList[i];
+    //     // test
+    //     button.addEventListener("click", () => {
+    //         alert("Event Listener added");
+    //     });
+    // }
+}
+// Reset the scores to zero
+// Init big function
+// onclick update function
+
+function main(){
+
 }
 main()
+addListeners()
