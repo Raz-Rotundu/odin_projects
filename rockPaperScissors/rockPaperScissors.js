@@ -43,27 +43,58 @@ function getPlayerMove(){
 
 // Add eventListeners to the buttons 
 function addListeners(){
-    const l = document.querySelectorAll('div.wrapper');
-    l.forEach((div) => console.log(div))
-    // let buttonNodeList = document.querySelectorAll(".moveButton ");
-    // let buttonList = Array.from(buttonNodeList);
-    // console.log(buttonList.length);
+    const buttonList = document.querySelectorAll(".moveButton");
 
-    // // Add a listener to each button
-    // for(let i = 0; i < buttonList.length; i++){
-    //     let button = buttonList[i];
-    //     // test
-    //     button.addEventListener("click", () => {
-    //         alert("Event Listener added");
-    //     });
-    // }
+    // Add a listener to each button
+    for(let i = 0; i < buttonList.length; i++){
+        let button = buttonList[i];
+        // test
+        button.addEventListener("click", () => {
+            alert("Event Listener added");
+        });
+    }
+}
+// updates the player score
+function updatePlayerScore (value){
+    playerScore = value;
+
+    const element = document.querySelector(".player");
+    element.innerHTML = `<p>Player Score: ${playerScore}</p>`;
+
+}
+// updates the ai score
+function updateAiScore (value){
+    aiScore = value;
+
+    const element = document.querySelector(".ai");
+    element.innerHTML = `<p>AI Score: ${aiScore}</p>`;
+
 }
 // Reset the scores to zero
-// Init big function
-// onclick update function
+function zeroScores(){
+    playerScore = 0;
+    aiScore = 0;
 
-function main(){
-
+    updatePlayerScore(0);
+    updateAiScore(0);
 }
-main()
-addListeners()
+// onclick update function
+function buttonClick(){
+    let move = this.id;
+    let ai = getAiMove();
+    let winner = getWinner(move, ai);
+    if(winner == 1){
+        updatePlayerScore(playerScore++);
+    }
+    else{
+        updateAiScore(aiScore++);
+    }
+}
+// Init big function
+let playerScore = 0;
+let aiScore = 0;
+
+document.addEventListener('DOMContentLoaded', () => {
+    addListeners();
+    zeroScores();
+});
