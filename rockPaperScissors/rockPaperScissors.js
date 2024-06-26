@@ -10,6 +10,9 @@ function getWinner(playerMove, aiMove){
     else if(playerMove === "scissor" && aiMove === "paper") {
         return 1;
     }
+    else if(playerMove == aiMove){
+        return -1;
+    }
     else{
         return 0;
     }
@@ -48,9 +51,10 @@ function addListeners(){
     // Add a listener to each button
     for(let i = 0; i < buttonList.length; i++){
         let button = buttonList[i];
+        let id = button.getAttribute("id");
         // test
         button.addEventListener("click", () => {
-            alert("Event Listener added");
+            buttonClick(id);
         });
     }
 }
@@ -78,22 +82,33 @@ function zeroScores(){
     updatePlayerScore(0);
     updateAiScore(0);
 }
-// onclick update function
-function buttonClick(){
-    let move = this.id;
+// onclick update function, takes as param ID of button
+function buttonClick(x){
+    let move = x;
     let ai = getAiMove();
     let winner = getWinner(move, ai);
     if(winner == 1){
-        updatePlayerScore(playerScore++);
+        let s = playerScore + 1;
+        updatePlayerScore(s);
+        alert(`You chose ${move}\nComputer chose ${ai}\n You Win!`);
+    }
+    else if(winner = -1){
+        alert(`You chose ${move}\nComputer chose ${ai}\n It's a Tie!`);
     }
     else{
-        updateAiScore(aiScore++);
+        let ss = aiScore + 1;
+        updateAiScore(ss);
+        alert(`You chose ${move}\nComputer chose ${ai}\n Computer wins!`);
     }
 }
+
 // Init big function
 let playerScore = 0;
 let aiScore = 0;
 
+
+
+// Main function
 document.addEventListener('DOMContentLoaded', () => {
     addListeners();
     zeroScores();
