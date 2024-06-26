@@ -1,0 +1,49 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+#header{
+    text-align: center;
+    background-color: antiquewhite;
+
+}
+
+#gridText{
+    background-color: aqua;
+
+}
+
+#gridBox{
+    background-color: aliceblue;
+    padding: 2%;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+}
+#grid{
+    background-color: bisque;
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+.gridButton{
+    height: 100px;
+    width: 100px;
+
+}
+
+.hovered{
+
+}
+footer{
+    background-color: aqua;
+
+    text-align: center;
+
+}

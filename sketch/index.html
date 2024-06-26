@@ -8,16 +8,19 @@
     <!-- Styles -->
     <link rel="stylesheet" href="./styles.css">
     <!-- Script -->
-    <script src="./functions.js"></script>
     <script src="./script.js"></script>
 </head>
 <body>
-    <header>Etch a Sketch Project</header>
-    <div id="gridText">
-        <h2>The grid size is entered here</h2>
+    <div id="header">
+        <h1>Etch a sketch project</h1>
     </div>
-    <div id="grid">
-        <h2> There will be a lot of buttons here</h2>
+    <div id="gridText">
+        <h2>Current Grid Size: </h2>
+        <input type="range" min="1" max="10" value="5" id="gridSlider">
+    </div>
+    <div id="gridBox">
+        <div id="grid">
+        </div>
     </div>
     <footer> Razvan Rotundu 2024</footer>
 
