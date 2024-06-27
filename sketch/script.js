@@ -24,14 +24,32 @@ function displaySize(size){
 }
 // Adds listeners to buttons and grid sliders
 function addListeners(){
+    addSliderListener();
+    addButtonListeners();
+}
+// Adds Slider listener and handling\
+function addSliderListener(){
     // Slider and update text
     slider = document.querySelector("#gridSlider");
     slider.addEventListener("mouseup", (e) => {
         let val = e.target.value;
         displaySize(val);
         createGrid(val);
+        
+        });
 
-    });
+}
+// Adds hover listeners to all of the buttons
+function addButtonListeners(){
+    let buttons = document.querySelectorAll(".gridButton");
+    for(let i = 0; i < buttons.length; i++){
+        let button = buttons[i];
+        button.addEventListener('mouseover', (e)=>{
+            let curButton = e.target;
+            // Add Hovered to the current class
+            curButton.setAttribute("class", `${curButton.getAttribute("class")} hovered`);
+        })
+    }
 }
 // Clears the grid area
 function clearGrid(){
@@ -46,10 +64,11 @@ function createGrid(size=10){
         addButton();
     }
     resizeGrid(size);
+    addButtonListeners();
 }
 // Main function
 document.addEventListener("DOMContentLoaded", () =>{
-    addListeners();
     createGrid(10);
+    addListeners();
 
 })
