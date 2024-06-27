@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+/* Slider Box Div */
+#sliderDiv{
+    flex-basis: 100px;
+    background-color: aquamarine;
+
+}
+
+#resizeDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-basis: 100px;
+    background-color: blanchedalmond;
+}
+#resizeBox{
+    background-color: cornflowerblue;
+}

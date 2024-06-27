@@ -1,9 +1,3 @@
-// Makes a button DOM object
-function makeButton(){
-
-
-    return 1;
-}
 
 // Adds the object to a specified div class
 function addButton(){
@@ -22,26 +16,32 @@ function resizeGrid(x){
     grid.setAttribute("style", len);
 
 }
+// Display the text size of the grid
+function displaySize(size){
+    let header = document.querySelector("#gridSize");
+    header.textContent = `Grid Size: ${size} x ${size}`;
+
+}
 // Adds listeners to buttons and grid sliders
 function addListeners(){
     // Slider and update text
     slider = document.querySelector("#gridSlider");
-    slider.addEventListener("input", () => {
-        handleSlider();
+    slider.addEventListener("mouseup", (e) => {
+        let val = e.target.value;
+        displaySize(val);
+        createGrid(val);
+
     });
 }
-// test
-function handleSlider(){
-    let slider = document.querySelector("#gridSlider");
-    let val = slider.value;
-    alert(val);
-    resizeGrid(val);
-
-
-
+// Clears the grid area
+function clearGrid(){
+    let grid = document.querySelector("#grid");
+    grid.innerHTML = "";
 }
 // Creates a grid of x by x buttons
 function createGrid(size=10){
+    // Clear previous grid
+    clearGrid();
     for(let i = 0; i < (size * size); i++){
         addButton();
     }
@@ -49,6 +49,7 @@ function createGrid(size=10){
 }
 // Main function
 document.addEventListener("DOMContentLoaded", () =>{
+    addListeners();
     createGrid(10);
 
 })
