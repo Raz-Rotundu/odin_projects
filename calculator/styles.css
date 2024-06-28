@@ -47,6 +47,12 @@ body{
     width:400px;
 
 }
+
+/* The screen content */
+#screenContent{
+    text-align: end;
+    font-size: 60px;
+}
 /* Div to hold the calculator buttons */
 #calcButtons{
     background-color: gainsboro;
