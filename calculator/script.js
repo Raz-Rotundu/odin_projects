@@ -80,16 +80,19 @@ function handleClick(event){
             }
         }
         if(buttonClass == "operation"){
-            // Equals refreshes screen
+            // Equals refreshes screen, goes to state 2
             if(buttonValue == "="){
                 updateDisplay("");
                 result = v1;
+                state = 2;
             }
             // Operands are added to display, update var, and go to state 1
-            let opString =  ` ${buttonValue} `;
-            operation = opString;
-            updateDisplay(opString);
-            state = 1;
+            else{
+                let opString =  ` ${buttonValue} `;
+                operation = opString;
+                updateDisplay(opString);
+                state = 1;
+            }
             // TEST
             // alert(`State switched to ${state}`);
 
@@ -104,7 +107,7 @@ function handleClick(event){
         }
     }
     // If state is 1
-    if(state == "1"){
+    else if(state == "1"){
         if(buttonClass == "number"){
             if(buttonValue == "."){
                 // Dots are added to string ONLY if not empty
@@ -115,7 +118,7 @@ function handleClick(event){
             }else{
                 //Numbers are appended to display and var2
                 v2 += buttonValue;
-               updateDisplay(buttonValue);
+                updateDisplay(buttonValue);
 
 
             }
@@ -124,15 +127,24 @@ function handleClick(event){
             if(buttonValue == "="){
                 // Equals performs operation cycle, sets state to 2
                 result = operate(v1, operation, v2);
+                console.log(`V1: ${v1}, V2: ${v2}, OP: ${operation}, RESULT: ${result}`)
                 clearScreen();
+                console.log(`RESULT: ${result}`);
                 updateDisplay(result);
                 state = 2;
 
             }else{
-                // Another sign performs operation, places result in var1, updates screen, state the same
+                // Another sign performs operation, places result in var1, updates screen, state the same, var 2 set to empty
+                let opString =  ` ${buttonValue} `;
+                operation = opString;
                 result = operate(v1, operation, v2);
-                var1 = result;
-                screenDisplay = var1;
+                console.log(`V1: ${v1}, V2: ${v2}, OP: ${operation}, RESULT: ${result}`)
+                var1 = result.toString();
+
+                v1 = var1;
+                v2 = "";
+
+                screenDisplay = var1 + ` ${buttonValue} `;
                 refreshScreen();
 
             }
