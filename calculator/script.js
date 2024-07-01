@@ -4,7 +4,13 @@ let v2 = "";
 let operation = "";
 let screenDisplay = "";
 
+// Saving previous calculation state
 result = "";
+prevState = -1;
+prevV1 = "";
+prevV2 = "";
+prevOp = ""
+prevDisplay = "";
 
 // System state
 let state = 0;
@@ -12,7 +18,27 @@ let state = 0;
 // Prevents multiple operation button presses executing an Operate()
 let opLoaded = false;
 
-// TODO: Handle a keyboard button press
+// Saves a calculator's state on calculation
+function saveState(res){
+    prevState = state;
+    result = res;
+    prevV1 = v1;
+    prevV2 = v2;
+    prevOp = operation;
+    prevDisplay = screenDisplay;
+}
+// Loads a calculator's state on button press
+function loadState(){
+    state = prevState;
+    v1 = prevV1;
+    v2 = prevV2;
+    operation = prevOp;
+    screenDisplay = "";
+    updateDisplay(result);
+
+
+}
+// Handle a keyboard button press
 function handleKey(k){
     let keyText = k.key;
     button = document.getElementById(keyText); //problem
@@ -37,28 +63,36 @@ function updateDisplay(value){
 }
 // Takes v1, v2, and performs the correct operation
 function operate(value1, operation, value2){
+    let x = "";
     switch(operation){
         case " + ":
-            return (parseFloat(value1) + parseFloat(value2));
+            x = parseFloat(value1) + parseFloat(value2);
+            break;
         case " - ":
-            return (parseFloat(value1) - parseFloat(value2));
+            x = parseFloat(value1) - parseFloat(value2)
+            break;
         case " * ":
-            let result = (parseFloat(value1) * parseFloat(value2));
+            x = (parseFloat(value1) * parseFloat(value2));
             // Round to five decimal places
-            result = Math.round(result * 100000) / 100000;
-            return result;
+            x = Math.round(x * 100000) / 100000;
+            break;
         case " / ":
             if(value2 != "0"){
-                let divResult = (parseFloat(value1) / parseFloat(value2));
-                divResult = Math.round(divResult * 100000) / 100000;
-                return divResult;
+                x = (parseFloat(value1) / parseFloat(value2));
+                x = Math.round(divResult * 100000) / 100000;
+
             }
             else{
-                return "ERROR"
-            } 
+                x = "ERROR";
+            }
+            break;
         default:
-            return "INVALID OP";
+            x = "INVALID OP";
+            break;
     }
+    saveState(x);
+    return x;
+
 
 }
 
@@ -88,7 +122,7 @@ function handleClick(event){
 
             }
         }
-        if(buttonClass == "operation"){
+        else if(buttonClass == "operation"){
             // Equals refreshes screen, goes to state 2
             if(buttonValue == "="){
                 updateDisplay("");
@@ -119,8 +153,10 @@ function handleClick(event){
             if(buttonValue == "AC"){
                 clearScreen();
             }
-
             // Prev display the previous value
+            else if(buttonValue == "Back"){
+                loadState();
+            }
         }
     }
     // If state is 1
@@ -140,7 +176,7 @@ function handleClick(event){
 
             }
         }
-        if(buttonClass == "operation"){
+        else if(buttonClass == "operation"){
             if(buttonValue == "="){
                 // Equals performs operation cycle, sets state to 2
                 result = operate(v1, operation, v2);
@@ -181,7 +217,9 @@ function handleClick(event){
             if(buttonValue == "AC"){
                 clearScreen();
                 state = 0;
-
+            }
+            else if (buttonValue == "Back"){
+                loadState();
             }
         }
     }
@@ -228,9 +266,8 @@ function handleClick(event){
                 state = 0;
             }
             // Prev shows result on screen, state is the same
-            else{
-                screenDisplay = result;
-                refreshScreen();
+            else if (buttonValue == "Back"){
+                loadState();
             }
 
         }
