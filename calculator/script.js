@@ -69,8 +69,8 @@ function handleClick(event){
         // Numbers are added to display and var1
         if(buttonClass == "number"){
             if(buttonValue == "."){
-                // dots are added to string ONLY if string isn't empty
-                if(v1 != ""){
+                // dots are added to string ONLY if string isn't empty, and if there is NOT another dot inside
+                if(v1 != "" && !(v1.includes("."))){
                     v1 += buttonValue;
                     updateDisplay(buttonValue);
                 }
@@ -122,7 +122,7 @@ function handleClick(event){
         if(buttonClass == "number"){
             if(buttonValue == "."){
                 // Dots are added to string ONLY if not empty
-                if(v2 != ""){
+                if(v2 != "" && !(v2.includes("."))){
                     v2 += buttonValue;
                     updateDisplay(buttonValue);
                 }
@@ -183,7 +183,7 @@ function handleClick(event){
     else{
         if(buttonClass == "number"){
             // dot carries number into state 0, adds itself
-            if(buttonValue == "."){
+            if(buttonValue == "." && !(v1.includes("."))){
                 v1 = result + ".";
                 state = 0;
                 updateDisplay(v1);
