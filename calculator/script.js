@@ -9,6 +9,9 @@ result = "";
 // System state
 let state = 0;
 
+// Prevents multiple operation button presses executing an Operate()
+let opLoaded = false;
+
 
 // Operation Cycle
 function operationCycle(inString){
@@ -88,10 +91,18 @@ function handleClick(event){
             }
             // Operands are added to display, update var, and go to state 1
             else{
-                let opString =  ` ${buttonValue} `;
-                operation = opString;
-                updateDisplay(opString);
-                state = 1;
+                // No operations on empty strings
+                if(screenDisplay == ""){
+                    refreshScreen();
+                }
+                else{
+                    let opString =  ` ${buttonValue} `;
+                    operation = opString;
+                    updateDisplay(opString);
+                    state = 1;
+    
+                    opLoaded = true;
+                }
             }
             // TEST
             // alert(`State switched to ${state}`);
@@ -135,17 +146,27 @@ function handleClick(event){
 
             }else{
                 // Another sign performs operation, places result in var1, updates screen, state the same, var 2 set to empty
-                let opString =  ` ${buttonValue} `;
-                operation = opString;
-                result = operate(v1, operation, v2);
-                console.log(`V1: ${v1}, V2: ${v2}, OP: ${operation}, RESULT: ${result}`)
-                var1 = result.toString();
+                // If no previous operation button pressed, go as normal
+                if(opLoaded = false){
+                    let opString =  ` ${buttonValue} `;
+                    operation = opString;
+                    result = operate(v1, operation, v2);
+                    console.log(`V1: ${v1}, V2: ${v2}, OP: ${operation}, RESULT: ${result}`)
+                    var1 = result.toString();
+    
+                    v1 = var1;
+                    v2 = "";
+    
+                    screenDisplay = var1 + ` ${buttonValue} `;
+                    refreshScreen();
 
-                v1 = var1;
-                v2 = "";
+                    opLoaded = true;
+                }
+                // If the previous operation button was pressed, do nothing
+                else{
+                    refreshScreen();
+                }
 
-                screenDisplay = var1 + ` ${buttonValue} `;
-                refreshScreen();
 
             }
         }
@@ -223,6 +244,8 @@ function clearVars(){
     v1 = "";
     v2 = "";
     operation = "";
+    // Clear oploaded state too
+    opLoaded = false;
 }
 // Clears the screen content and the global variables
 function clearScreen(){
