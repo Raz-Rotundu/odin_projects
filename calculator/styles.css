@@ -80,6 +80,7 @@ body{
 .calcButton:hover{
     background-color: salmon;
 }
+
 /* Subclasses for the number of buttons */
 .number{
     background-color: rgb(167, 196, 250);

@@ -12,7 +12,14 @@ let state = 0;
 // Prevents multiple operation button presses executing an Operate()
 let opLoaded = false;
 
+// TODO: Handle a keyboard button press
+function handleKey(k){
+    let keyText = k.key;
+    button = document.getElementById(keyText); //problem
+    button.click();
+    
 
+}
 // Operation Cycle
 function operationCycle(inString){
     let result = operate(inString);
@@ -23,7 +30,6 @@ function operationCycle(inString){
 
 // Updates given variable and the screen
 function updateDisplay(value){
-    // TODO: Constrain to the last 12 numbers
     screenDisplay += value;
     refreshScreen();
 
@@ -36,7 +42,7 @@ function operate(value1, operation, value2){
             return (parseFloat(value1) + parseFloat(value2));
         case " - ":
             return (parseFloat(value1) - parseFloat(value2));
-        case " X ":
+        case " * ":
             let result = (parseFloat(value1) * parseFloat(value2));
             // Round to five decimal places
             result = Math.round(result * 100000) / 100000;
@@ -266,6 +272,9 @@ function addListeners(){
            handleClick(e);
         })
     }
+
+    // Keyboard event listeners
+    document.addEventListener("keypress", (k)=>handleKey(k));
 }
 // main script
 document.addEventListener("DOMContentLoaded", ()=>{
