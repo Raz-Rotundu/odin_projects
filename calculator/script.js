@@ -8,8 +8,6 @@ result = "";
 
 // System state
 let state = 0;
-// prevent multiple ops in a row (eg 1+-)
-let oploaded = false;
 
 
 // Operation Cycle
@@ -122,17 +120,12 @@ function handleClick(event){
                 v2 += buttonValue;
                 updateDisplay(buttonValue);
 
-                // reset oploaded
-                oploaded = false;
-
 
             }
         }
         if(buttonClass == "operation"){
             if(buttonValue == "="){
-                // Only calculate if there was an operation loaded
-                if(oploaded == true){
-                    // Equals performs operation cycle, sets state to 2
+                // Equals performs operation cycle, sets state to 2
                 result = operate(v1, operation, v2);
                 console.log(`V1: ${v1}, V2: ${v2}, OP: ${operation}, RESULT: ${result}`)
                 clearScreen();
@@ -140,35 +133,20 @@ function handleClick(event){
                 updateDisplay(result);
                 state = 2;
 
-                // reset oploaded
-                oploaded = false;
-                }
-                // No oploaded, do nothing
-                else{
-                    refreshScreen();
-                }
             }else{
                 // Another sign performs operation, places result in var1, updates screen, state the same, var 2 set to empty
-                // If oploaded is false(no operation loaded here, continue as normal)
-                if(oploaded == false){
-                    let opString =  ` ${buttonValue} `;
-                    operation = opString;
-                    result = operate(v1, operation, v2);
-                    console.log(`V1: ${v1}, V2: ${v2}, OP: ${operation}, RESULT: ${result}`)
-                    var1 = result.toString();
-    
-                    v1 = var1;
-                    v2 = "";
-    
-                    screenDisplay = var1 + ` ${buttonValue} `;
-                    refreshScreen();
-                    
-                    oploaded = true;
-                }
-                // If user presses another operation, ignore it
-                else{
-                    refreshScreen();
-                }
+                let opString =  ` ${buttonValue} `;
+                operation = opString;
+                result = operate(v1, operation, v2);
+                console.log(`V1: ${v1}, V2: ${v2}, OP: ${operation}, RESULT: ${result}`)
+                var1 = result.toString();
+
+                v1 = var1;
+                v2 = "";
+
+                screenDisplay = var1 + ` ${buttonValue} `;
+                refreshScreen();
+
             }
         }
         else{
