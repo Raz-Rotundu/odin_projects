@@ -56,7 +56,7 @@ function operate(value1, operation, value2){
 
 }
 
-// TODO: handles the click of a button based on its value
+// Handles the click of a button based on its value
 function handleClick(event){
     let button = event.target;
     // get the button's class and value
@@ -235,8 +235,12 @@ function handleClick(event){
 
 // Refreshes screen display to current screenDisplay value
 function refreshScreen(){
+
     let screen = document.querySelector("#screenContent");
-    screen.textContent = screenDisplay;
+    // Truncate to max length of 12
+    shortDisplay = screenDisplay.substring(screenDisplay.length - 12);
+    screen.textContent = shortDisplay;
+
 }
 
 // Clears global variables ONLY
